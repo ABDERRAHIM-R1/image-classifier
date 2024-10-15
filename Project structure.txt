@@ -1,0 +1,16 @@
+Project structure: 
+|-train.py (run this first it downloads the data and trains the model)
+|-predict.py (run this after train the model, it classifies any image you give it to one of the 10 categories) 
+|--data ( created automatically when training the model Cifar-10 downloads the images here) 
+|-bestmodel.py ( created after training the model) 
+--------------------------------------------------------------------------------------------------------
+How it works: 
+1- we show the model 50000 labelled images 
+2- it makes a guess ( probably wrong at first) 
+3-we tell it how wrong it was 
+4-its adjust its internal settings 
+5- repeat like 20 times (until it gets good) 
+notes : 
+when I run the training model on my gpu (rtx 4050) it took just 3 minutes to finish I guess it works only on nvidia gpus. if it's the case for you , you can add this line of code : 
+---------------------------------------------------------
+| device = "cuda" if torch.cuda.is_available() else "cpu" |
